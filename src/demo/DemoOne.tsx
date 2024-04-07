@@ -60,22 +60,27 @@ const DemoOne = () => {
         draggableClass=".element-block"
       >
         {draggableItems.map((item, index) => (
-          <React.Fragment key={item.id}>
+          <div key={item.id} style={{ position: "relative" }}>
             {dropZoneIndex === index && (
               <div
                 className="drop-zone"
-                style={{ borderBottom: "1px solid black" }}
+                style={{
+                  borderBottom: "2px solid #2d5090a3",
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                }}
               ></div>
             )}
             <div id={item.id} className="element-block">
               {item.value}
             </div>
-          </React.Fragment>
+          </div>
         ))}
         {dropZoneIndex === draggableItems.length && (
           <div
             className="drop-zone"
-            style={{ borderBottom: "1px solid black" }}
+            style={{ borderBottom: "2px solid #2d5090a3" }}
           ></div>
         )}
       </Draggable>
