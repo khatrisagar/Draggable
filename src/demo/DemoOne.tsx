@@ -65,24 +65,34 @@ const DemoOne = () => {
               <div
                 className="drop-zone"
                 style={{
-                  borderBottom: "2px solid #2d5090a3",
+                  borderBottom: "4px solid #2d5090a3",
                   position: "absolute",
                   left: 0,
                   right: 0,
                 }}
               ></div>
             )}
-            <div id={item.id} className="element-block">
+            <div
+              id={item.id}
+              className="element-block"
+              style={{ fontSize: "3rem" }}
+            >
               {item.value}
             </div>
+            {index === draggableItems.length - 1 &&
+              dropZoneIndex === draggableItems.length && (
+                <div
+                  className="drop-zone"
+                  style={{
+                    borderBottom: "4px solid #2d5090a3",
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                  }}
+                ></div>
+              )}
           </div>
         ))}
-        {dropZoneIndex === draggableItems.length && (
-          <div
-            className="drop-zone"
-            style={{ borderBottom: "2px solid #2d5090a3" }}
-          ></div>
-        )}
       </Draggable>
     </div>
   );
