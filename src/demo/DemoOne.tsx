@@ -60,7 +60,18 @@ const DemoOne = () => {
         draggableClass=".element-block"
       >
         {draggableItems.map((item, index) => (
-          <div key={item.id} style={{ position: "relative", padding: "8px" }}>
+          <div
+            key={item.id}
+            id={item.id}
+            className="element-block"
+            style={{
+              fontSize: "3rem",
+              lineHeight: "1",
+              margin: 0,
+              position: "relative",
+              padding: "8px",
+            }}
+          >
             {dropZoneIndex === index && (
               <div
                 className="drop-zone"
@@ -74,18 +85,8 @@ const DemoOne = () => {
                 }}
               ></div>
             )}
-            <div
-              id={item.id}
-              className="element-block"
-              style={{
-                fontSize: "3rem",
-                lineHeight: "1",
-                padding: 0,
-                margin: 0,
-              }}
-            >
-              {item.value}
-            </div>
+            <div className="value-wrapper">{item.value}</div>
+
             {index === draggableItems.length - 1 &&
               dropZoneIndex === draggableItems.length && (
                 <div
@@ -97,6 +98,7 @@ const DemoOne = () => {
                     position: "absolute",
                     left: "8px",
                     right: "8px",
+                    bottom: "-8px",
                   }}
                 ></div>
               )}
