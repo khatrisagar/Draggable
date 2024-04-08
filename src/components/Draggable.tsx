@@ -86,7 +86,7 @@ const Draggable = ({
       droppableElementId: droppableElementId,
       droppableIndex: droppableIndex,
       dropZoneIndex:
-        draggableElementInfo.index &&
+        draggableElementInfo.index !== null &&
         draggableElementInfo.index >= droppableIndex
           ? droppableIndex
           : droppableIndex + 1,
