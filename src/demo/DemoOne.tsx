@@ -69,7 +69,8 @@ const DemoOne = () => {
               lineHeight: "1",
               margin: 0,
               position: "relative",
-              padding: "8px",
+              paddingInline: "8px",
+              paddingBlock: "6px",
             }}
           >
             {dropZoneIndex === index && (
